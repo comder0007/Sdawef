@@ -1,6 +1,7 @@
-from pyrogram import Client, filters
+from .. import app,call,bot,
+from pyrogram import filters
 
-@Client.on_message(filters.command ('id'))
+@app.on_message(filters.command ('id'))
 async def cmd_id(Client,message):
   try:
     user_id = str(message.from_user.id)

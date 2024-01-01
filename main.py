@@ -8,7 +8,7 @@ from pyrogram.types import *
 api_id = 12380656
 api_hash = "d927c13beaaf5110f25c505b7c071273"
 bot_token = "6479300434:AAFJP-O_OBuXzoRrQRMBrbmZeBequL1EVJA"
-plugins = dict(root="helper/")
+plugins = dict(root="helper")
 
 for file in os.listdir():
     if file.endswith(".session"):

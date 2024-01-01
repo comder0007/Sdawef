@@ -25,7 +25,7 @@ app = Client(
 )
 
 
-@app.on_message(filters.command(["start", "help"], ["/", "!", "."]) & filters.private)
+@app.on_message(filters.command(["start", "help"], ["/", "!", "."]))
 async def start_message(client, message):
     await message.reply_text(f"Hello, {message.from_user.mention}")
 

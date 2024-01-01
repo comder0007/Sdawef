@@ -31,8 +31,5 @@ async def main():
     async def start_message(client, message):
         await message.reply_text(f"Hello, {message.from_user.mention}")
 
-    await app.run()
-
-
 print("Done Bot Active ✅")
 asyncio.run(main())

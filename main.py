@@ -26,7 +26,7 @@ async def main():
     bot_token = bot_token,
     plugins=plugins,
 )
-    app..set_parse_mode(enums.ParseMode.HTML)
+    app.set_parse_mode(enums.ParseMode.HTML)
 
 
 @app.on_message(filters.command(["start", "help"], ["/", "!", "."]))

@@ -1,5 +1,5 @@
 from pyrogram import filters
-from .. import app,Client
+from main import *
 
 @app.on_message(filters.command(["id"], ["/", "!", "."]))
 async def cmd_id(Client,message):

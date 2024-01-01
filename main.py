@@ -27,6 +27,7 @@ async def main():
     plugins=plugins,
 )
     app.set_parse_mode(enums.ParseMode.HTML)
+    await compose(clients)
 
 
 @app.on_message(filters.command(["start", "help"], ["/", "!", "."]))
@@ -63,8 +64,4 @@ async def start_photo(client, message):
     
 
 print("Done Bot Active ✅")
-
-    await compose(clients)
-
-
 asyncio.run(main())

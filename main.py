@@ -27,41 +27,13 @@ async def main():
     plugins=plugins,
 )
     app.set_parse_mode(enums.ParseMode.HTML)
+    @app.on_message(filters.command(["start", "help"], ["/", "!", "."]))
+    async def start_message(client, message):
+        await message.reply_text(f"Hello, {message.from_user.mention}")
+
     await compose(clients)
 
 
-@app.on_message(filters.command(["start", "help"], ["/", "!", "."]))
-async def start_message(client, message):
-    await message.reply_text(f"Hello, {message.from_user.mention}")
-
-
-@app.on_message(filters.command(["pic"], ["/", "!", "."]) & filters.private)
-async def start_photo(client, message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/7d6675f32fd14d710ebc9.jpg",
-        caption="**Hi, I am A New Robot For Telegram**",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="😎 Owner",
-                        url=f"https://t.me/iamkaal",
-                    ),
-                    InlineKeyboardButton(
-                        text="🤓 Updates",
-                        url=f"https://t.me/Kaalware",
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="😎 Support",
-                        url=f"https://t.me/kaalgram",
-                    ),
-                ],
-           ],
-        )
-    )
-    
 
 print("Done Bot Active ✅")
 asyncio.run(main())
